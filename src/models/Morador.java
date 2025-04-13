@@ -8,11 +8,12 @@ public class Morador {
 	private String sexo;
 	private int bloco;
 	private int apartamento;
-	private static int codigoSequencial;
+	private static int codigoSequencial = 0;
 	private int codigo;
-	
-	public Morador(String nome, String cpf, String celular, String dataNascimento, String sexo, int bloco,int apartamento) {
-		super();
+
+	public Morador(String nome, String cpf, String celular, String dataNascimento, String sexo, int bloco,
+			int apartamento) {
+		this.codigo = ++codigoSequencial;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.celular = celular;
@@ -20,7 +21,10 @@ public class Morador {
 		this.sexo = sexo;
 		this.bloco = bloco;
 		this.apartamento = apartamento;
-		this.codigo = ++codigoSequencial;
+	}
+
+	public int getCodigo() {
+		return codigo;
 	}
 
 	public String getNome() {
@@ -81,9 +85,8 @@ public class Morador {
 
 	@Override
 	public String toString() {
-		return "Moradores [nome=" + nome + ", cpf=" + cpf + ", celular=" + celular + ", dataNascimento="
-				+ dataNascimento + ", sexo=" + sexo + ", bloco=" + bloco + ", apartamento=" + apartamento + ", codigoSequencial=" + codigo;
+		return "Morador [código=" + codigo + ", nome=" + nome + ", cpf=" + cpf + ", celular=" + celular
+				+ ", dataNascimento=" + dataNascimento + ", sexo=" + sexo + ", bloco=" + bloco + ", apartamento="
+				+ apartamento + "]";
 	}
-	
 }
-
